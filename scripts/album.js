@@ -65,8 +65,23 @@ var albumMarconi = {
     }
 };
 
+// var findParentByClassName = function(element, targetClass) {
+//    if (element) {
+//        var currentParent = element.parentElement;
+//        while (currentParent.className !== targetClass && currentParent.className !== null) {
+//            currentParent = currentParent.parentElement;
+//        }
+//        return currentParent;
+//    }
+//};
+
 var findParentByClassName = function(element, targetClass) {
-    if (element) {
+    if (element.parentElement != element) {
+        console.log("No parent found")
+    } else if (element.parentElement != targetClass) {
+        console.log("No parent found with that class name")
+
+    } else if (element) {
         var currentParent = element.parentElement;
         while (currentParent.className !== targetClass && currentParent.className !== null) {
             currentParent = currentParent.parentElement;
